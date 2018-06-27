@@ -17,11 +17,14 @@ public class SessionManager {
     int PRIVATE_MODE = 0;
 
     private static final String PREF_NAME = "LOGIN";
-    private static final String LOGIN = "IS_LOGIN";
+    private static final String PREF_NAMa = "ISI_DATA";
+    private static final String LOGIN = "IS_DATA";
+    private static final String ISI_DATA = "IS_LOGIN";
     public static final String ID_USER = "ID_USER";
     public static final String NAMA_USER = "NAMA_USER";
     public static final String EMAIL_USER = "EMAIL_USER";
     public static final String JENJANG= "JENJANG";
+    public static final String ID_SISWA= "ID_SISWA";
 
 
 
@@ -41,6 +44,12 @@ public class SessionManager {
 
         editor.apply();
     }
+    public void createSessiondata(String id_user){
+        editor.putBoolean(ISI_DATA, true);
+        editor.putString( "ID_SISWA", id_user );
+        editor.apply();
+    }
+
 
     public boolean isLoggin(){
         return sharedPreferences.getBoolean( LOGIN, false );

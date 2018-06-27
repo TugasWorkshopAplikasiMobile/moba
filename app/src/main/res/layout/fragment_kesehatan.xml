@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:text="D. Kesehatan Anak"/>
+        android:text="D. Kesehatan Siswa"/>
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_marginTop="15dp"
@@ -118,7 +118,7 @@
         android:layout_marginTop="15dp"
         android:layout_height="wrap_content">
         <AutoCompleteTextView
-            android:id="@+id/kelaina"
+            android:id="@+id/kelainan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Kelainan Dalam Tubuh"
