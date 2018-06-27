@@ -75,7 +75,6 @@ public class isiData_fragmen extends Fragment {
                 clik();
             }
         });
-
         return nv;
     }
     public void showSnackbar(String stringSnackbar){
@@ -167,7 +166,7 @@ public class isiData_fragmen extends Fragment {
         final String ting = tglbr.getText().toString().trim();
         final String ake = ak.getText().toString().trim();
 
-        SessionManager sessionManager = new SessionManager(getContext());
+        final SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
         final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + Urlinsert,
@@ -178,6 +177,9 @@ public class isiData_fragmen extends Fragment {
                             JSONObject jsonObject = new JSONObject(response);
                             String succes = jsonObject.getString("succes");
                             if (succes.equals("1")) {
+                                JSONObject data_user=jsonObject.getJSONObject("data_siswa");
+                                String id_siswa = data_user.getString("id_siswa");
+                                sessionManager.createSessiondata(id_siswa);
 //                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
                                 android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();

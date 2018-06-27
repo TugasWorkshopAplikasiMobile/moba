@@ -133,7 +133,7 @@ public class riwayatsekolah_frag extends Fragment {
 
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
-        final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
+        final String mIduser = String.valueOf(user.get(sessionManager.ID_SISWA));
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + Urlinsert,
                 new Response.Listener<String>() {
                     @Override
@@ -176,12 +176,12 @@ public class riwayatsekolah_frag extends Fragment {
                 Map<String, String> params = new HashMap<>();
                 params.put("nm_sekolah", nama_s);
                 params.put("thn_masuk", tahun_m);
-                params.put("thn_tsmst", tahun_t);
+                params.put("thn_tamat", tahun_t);
                 params.put("almt_sekolah", alamat_s);
                 params.put("ksulitan", sulit);
                 params.put("aktifitas", tifitas);
                 params.put("api", "riwayat_sklh");
-                params.put("id_user", mIduser);
+                params.put("id_siswa", mIduser);
                 return params;
             }
         };
