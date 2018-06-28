@@ -53,7 +53,6 @@ public class cirikhas_frag extends Fragment {
         pr = view.findViewById(R.id.perempuan);
         prestasi = view.findViewById(R.id.prestasi);
         nama_saudara = view.findViewById(R.id.nama_saudara);
-        jk_saudara = view.findViewById(R.id.jk_saudara);
         pendidikan_saudara = view.findViewById(R.id.pendidikan_saudara);
         return view;
     }

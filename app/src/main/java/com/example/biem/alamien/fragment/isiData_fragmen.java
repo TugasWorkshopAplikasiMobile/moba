@@ -1,13 +1,9 @@
 package com.example.biem.alamien.fragment;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +13,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.biem.alamien.LoginActivity;
 import com.example.biem.alamien.R;
 import com.example.biem.alamien.model.baseUrlApi;
 import com.example.biem.alamien.serivices.SessionManager;
@@ -35,15 +29,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-
 
 public class isiData_fragmen extends Fragment {
     private Snackbar snackbar;
     private Button gofrag2;
     private ProgressBar pd;
     TextView nl,np,tl,up,agm,kwn,tglbr,ak;
-    private String Urlinsert = "api/isidata";
+    private String Urlinsert = "api/insert";
     baseUrlApi baseUrlApi = new baseUrlApi();
     private String URL = baseUrlApi.getBaseUrl();
     private RadioButton lk,pr,islam,kristen,katolik,hindu,budha,wni,wna;
@@ -59,7 +51,7 @@ public class isiData_fragmen extends Fragment {
         up = nv.findViewById(R.id.usia);
         wni = nv.findViewById(R.id.wni);
         wna = nv.findViewById(R.id.wna);
-        tl = nv.findViewById(R.id.tanggal_lahir);
+        tl = nv.findViewById(R.id.ttl);
         lk = nv.findViewById(R.id.laki);
         pr = nv.findViewById(R.id.perempuan);
         islam= nv.findViewById(R.id.islam);
@@ -87,9 +79,7 @@ public class isiData_fragmen extends Fragment {
         String nama_p = np.getText().toString();
         String nama_l = nl.getText().toString();
         String usia = up.getText().toString();
-        String kwng = kwn.getText().toString();
-        String tgl_ = tl.getText().toString();
-        String agama = agm.getText().toString();
+        String tgl = tl.getText().toString();
         String ting = tglbr.getText().toString();
         String ake = ak.getText().toString();
         View focusView = null;
@@ -114,29 +104,17 @@ public class isiData_fragmen extends Fragment {
             focusView = np;
             np.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(usia)) {
-            showSnackbar("Isi password");
-            up.setError(getString(R.string.error_field_required));
-            focusView = up;
-            up.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(kwng)) {
-            showSnackbar("Isi password");
-            kwn.setError(getString(R.string.error_field_required));
-            focusView = kwn;
-            kwn.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(tgl_)) {
+        }else if (TextUtils.isEmpty(tgl)) {
             showSnackbar("Isi password");
             tl.setError(getString(R.string.error_field_required));
             focusView = tl;
             tl.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(agama)) {
+        }else if (TextUtils.isEmpty(usia)) {
             showSnackbar("Isi password");
-            agm.setError(getString(R.string.error_field_required));
-            focusView = agm;
-            agm.requestFocus();
+            up.setError(getString(R.string.error_field_required));
+            focusView = up;
+            up.requestFocus();
             cancel = true;
         }else if (TextUtils.isEmpty(ting)) {
             showSnackbar("Isi password");
@@ -162,7 +140,7 @@ public class isiData_fragmen extends Fragment {
         final String nama_p = np.getText().toString().trim();
         final String nama_l = nl.getText().toString().trim();
         final String usia = up.getText().toString().trim();
-        final String tgl_ = tl.getText().toString().trim();
+        final String tgl = tl.getText().toString().trim();
         final String ting = tglbr.getText().toString().trim();
         final String ake = ak.getText().toString().trim();
 
@@ -194,9 +172,12 @@ public class isiData_fragmen extends Fragment {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            showSnackbar("Data gagal di input");
-                            pd.setVisibility(View.GONE);
-                            gofrag2.setVisibility(View.VISIBLE);
+                            showSnackbar("selamat");
+                            android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();
+                            android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                            ft.replace(R.id.screen_area,fragment);
+                            ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
+                            ft.commit();
                         }
                     }
                 },
@@ -221,7 +202,7 @@ public class isiData_fragmen extends Fragment {
                 }
 
                 params.put("usia", usia);
-                params.put("tl", tgl_);
+                params.put("tl", tgl);
                 if (pr.isChecked()){
                     params.put("jk", "2");
                 }else {

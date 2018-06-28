@@ -1,11 +1,13 @@
-package com.example.biem.alamien;
+package com.example.biem.alamien.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.example.biem.alamien.R;
+import com.example.biem.alamien.activity.LoginActivity;
 
 public class splash extends Activity {
 

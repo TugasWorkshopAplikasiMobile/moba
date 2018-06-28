@@ -1,4 +1,4 @@
-package com.example.biem.alamien;
+package com.example.biem.alamien.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.biem.alamien.R;
+import com.example.biem.alamien.activity.LoginActivity;
+import com.example.biem.alamien.activity.isiData;
 import com.example.biem.alamien.fragment.About_fragment;
 import com.example.biem.alamien.fragment.daftarulang_fragment;
 import com.example.biem.alamien.fragment.home_fragment;

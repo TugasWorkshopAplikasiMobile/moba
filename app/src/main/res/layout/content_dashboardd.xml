@@ -7,7 +7,7 @@
     android:id="@+id/isi"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".dashboardd"
+    tools:context=".activity.dashboardd"
     tools:showIn="@layout/app_bar_dashboardd">
     <FrameLayout
         android:id="@+id/screen_area"

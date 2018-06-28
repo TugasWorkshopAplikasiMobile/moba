@@ -55,7 +55,7 @@ public class kesehatan_frag extends Fragment {
         o = nv.findViewById(R.id.O);
         minum_asi= nv.findViewById(R.id.minum_asi);
         perkem_2_bulan= nv.findViewById(R.id.perkem_2_bulan);
-        kelainan = nv.findViewById(R.id.kelaina);
+        kelainan = nv.findViewById(R.id.kelainan);
         makan_tambahan= nv.findViewById(R.id.makan_tambahan);
         imunisasi= nv.findViewById(R.id.imunisasi);
         alergi= nv.findViewById(R.id.alergi);

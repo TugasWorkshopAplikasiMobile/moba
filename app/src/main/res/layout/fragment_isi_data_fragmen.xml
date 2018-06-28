@@ -11,14 +11,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ProgressBar
-        android:id="@+id/progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        android:layout_gravity="center"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama Lengkap Siswa"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:maxLines="1"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
@@ -53,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama Pangilan"
-                android:inputType="date"
+                android:inputType="text"
                 android:maxLines="1"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
@@ -65,9 +58,10 @@
                 android:id="@+id/ttl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tanggal Lahir"
+                android:hint="Tanggal Lahir(yyy/mm/dd)"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:inputType="date"/>
         </android.support.design.widget.TextInputLayout>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -79,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Usia per-1 juli"
                 android:maxLines="1"
+                android:inputType="number"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
         <TextView
@@ -103,70 +98,47 @@
                 android:layout_weight="3"
                 android:layout_height="wrap_content" />
         </RadioGroup>
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<AutoCompleteTextView-->
-                <!--android:id="@+id/jk"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Jenis Kelamin"-->
-                <!--android:maxLines="1"-->
-                <!--android:singleLine="true" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
         <TextView
             android:text="Agama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"/>
+
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="138dp">
+
             <RadioButton
-                android:text="Islam"
                 android:id="@+id/islam"
-                android:layout_width="0px"
-                android:layout_weight="3"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Islam" />
+
             <RadioButton
-                android:text="Kristen"
                 android:id="@+id/kristen"
-                android:layout_width="0px"
-                android:layout_weight="3"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kristen" />
+
             <RadioButton
-                android:text="Katolik"
                 android:id="@+id/katolik"
-                android:layout_width="0px"
-                android:layout_weight="3"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Katolik" />
+
             <RadioButton
-                android:text="Hindu"
                 android:id="@+id/hindu"
-                android:layout_width="0px"
-                android:layout_weight="3"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hindu" />
+
             <RadioButton
-                android:text="Budha"
                 android:id="@+id/budha"
                 android:layout_width="0px"
+                android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:layout_height="wrap_content" />
+                android:text="Budha" />
         </RadioGroup>
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<AutoCompleteTextView-->
-                <!--android:id="@+id/agama"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Agama"-->
-                <!--android:maxLines="1"-->
-                <!--android:singleLine="true" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
         <TextView
             android:text="Kewarganegaraan"
             android:layout_width="match_parent"
@@ -189,18 +161,6 @@
                 android:layout_weight="3"
                 android:layout_height="wrap_content" />
         </RadioGroup>
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<AutoCompleteTextView-->
-                <!--android:id="@+id/kwn"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Kewarganegaraan"-->
-                <!--android:maxLines="1"-->
-                <!--android:singleLine="true" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
@@ -222,6 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Anak ke-"
+                android:inputType="number"
                 android:maxLines="1"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>

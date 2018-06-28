@@ -21,21 +21,23 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. Nilai Test/Psikotest"
+                android:text="Nilai Test/Psikotest"
                 android:textSize="20dp"
-                />
+                android:gravity="center"/>
 
 
             <TableLayout
+                android:gravity="center"
+                android:layout_marginLeft="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="170dp"
-                android:id="@+id/nilai2"
-                android:layout_marginTop="10dp">
+                android:id="@+id/nilai"
+                android:layout_marginTop="70dp">
 
                 <TableRow
-                    android:id="@+id/row2"
                     android:background="@android:color/holo_blue_bright"
                     android:padding="5dp">
 
@@ -63,10 +65,11 @@
                         android:text="Bahasa Indonesia"/>
 
                     <TextView
+                        android:id="@+id/bin"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="80"
+                        android:hint="-"
                         android:gravity="center"/>
                 </TableRow>
 
@@ -80,10 +83,11 @@
                         android:text="Matematika"/>
 
                     <TextView
+                        android:id="@+id/mtk"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="95"
+                        android:hint="-"
                         android:gravity="center"/>
                 </TableRow>
 
@@ -97,10 +101,11 @@
                         android:text="IPA"/>
 
                     <TextView
+                        android:id="@+id/ipa"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+                        android:hint="-"
                         android:gravity="center"/>
                 </TableRow>
                 <TableRow
@@ -110,17 +115,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TPA"/>
+                        android:text="Bahasa Inggris"/>
 
                     <TextView
+                        android:id="@+id/bing"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="90"
+                        android:hint="-"
                         android:gravity="center"/>
                 </TableRow>
-
-
                 <TableRow
                     android:background="#ECEFF1"
                     android:padding="5dp">
@@ -128,82 +132,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rata-Rata"/>
+                        android:text="Psikologi"/>
 
                     <TextView
+                        android:id="@+id/psikologi"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text=""
-                        android:gravity="center"/>
-                </TableRow>
-            </TableLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3. Rata-rata Nilai"
-                android:textSize="20dp"
-                />
-
-
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="170dp"
-                android:id="@+id/rata"
-                android:layout_marginTop="10dp">
-
-                <TableRow
-                    android:id="@+id/row3"
-                    android:background="@android:color/holo_blue_bright"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:text="Jenis Nilai"
-                        android:gravity="center"/>
-
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Nilai"
+                        android:hint="-"
                         android:gravity="center"/>
                 </TableRow>
 
-                <TableRow
-                    android:background="#ECEFF1"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="UN"/>
-
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="87.5"
-                        android:gravity="center"/>
-                </TableRow>
-
-                <TableRow
-                    android:background="#ECEFF1"
-                    android:padding="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Test"/>
-
-                    <TextView
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="88.75"
-                        android:gravity="center"/>
-                </TableRow>
                 <TableRow
                     android:background="#ECEFF1"
                     android:padding="5dp">
@@ -221,6 +160,73 @@
                         android:gravity="center"/>
                 </TableRow>
             </TableLayout>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="3. Rata-rata Nilai"-->
+                <!--android:textSize="20dp"-->
+                <!--/>-->
+
+
+            <!--<TableLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="170dp"-->
+                <!--android:id="@+id/rata"-->
+                <!--android:layout_marginTop="10dp">-->
+
+                <!--<TableRow-->
+                    <!--android:id="@+id/row3"-->
+                    <!--android:background="@android:color/holo_blue_bright"-->
+                    <!--android:padding="5dp">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="120dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Jenis Nilai"-->
+                        <!--android:gravity="center"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text="Nilai"-->
+                        <!--android:gravity="center"/>-->
+                <!--</TableRow>-->
+
+                <!---->
+                <!--<TableRow-->
+                    <!--android:background="#ECEFF1"-->
+                    <!--android:padding="5dp">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Test"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text="88.75"-->
+                        <!--android:gravity="center"/>-->
+                <!--</TableRow>-->
+                <!--<TableRow-->
+                    <!--android:background="#ECEFF1"-->
+                    <!--android:padding="5dp">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Rata-Rata"/>-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:text=""-->
+                        <!--android:gravity="center"/>-->
+                <!--</TableRow>-->
+            <!--</TableLayout>-->
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

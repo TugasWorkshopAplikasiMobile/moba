@@ -1,4 +1,4 @@
-package com.example.biem.alamien;
+package com.example.biem.alamien.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
+import com.example.biem.alamien.R;
 import com.example.biem.alamien.fragment.isiData_fragmen;
 
 public class isiData extends AppCompatActivity {
@@ -21,12 +22,5 @@ private EditText siswa;
         final Fragment fragment = new isiData_fragmen();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.isidata,fragment).commit();
-
-
-
-    }
-
-    public void kirim(View view) {
-
     }
 }
