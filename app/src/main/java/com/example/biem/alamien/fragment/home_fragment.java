@@ -2,8 +2,6 @@ package com.example.biem.alamien.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 
 import android.view.View;
@@ -19,7 +17,7 @@ import com.example.biem.alamien._sliders.FragmentSlider;
 import com.example.biem.alamien._sliders.SliderIndicator;
 import com.example.biem.alamien._sliders.SliderPagerAdapter;
 import com.example.biem.alamien._sliders.SliderView;
-import com.example.biem.alamien.isiData;
+import com.example.biem.alamien.activity.isiData;
 
 
 public class home_fragment extends android.support.v4.app.Fragment {

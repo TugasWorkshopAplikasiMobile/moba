@@ -1,10 +1,12 @@
-package com.example.biem.alamien;
+package com.example.biem.alamien.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.biem.alamien.R;
 
 public class verifikasi_number extends AppCompatActivity {
 

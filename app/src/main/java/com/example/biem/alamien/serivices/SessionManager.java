@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import com.example.biem.alamien.LoginActivity;
-import com.example.biem.alamien.dashboardd;
+import com.example.biem.alamien.activity.LoginActivity;
+import com.example.biem.alamien.activity.dashboardd;
 
 import java.util.HashMap;
 
