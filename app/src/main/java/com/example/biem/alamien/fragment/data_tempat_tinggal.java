@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -31,11 +30,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class kelahiran extends Fragment {
+public class data_tempat_tinggal extends Fragment {
     private Snackbar snackbar;
-    private Button gofrag6;
+    private Button gofrag8;
     private ProgressBar pd;
-    private TextView lk,kk,kl,pk,pmbntu_klhrn,bp,usiaibu;
+    private TextView stt,jr,lr,jk;
     private String Urlinsert = "api/isidata";
     com.example.biem.alamien.model.baseUrlApi baseUrlApi = new baseUrlApi();
     private String URL = baseUrlApi.getBaseUrl();
@@ -44,17 +43,14 @@ public class kelahiran extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View nv = inflater.inflate(R.layout.fragment_kelahiran, container, false);
+        View nv = inflater.inflate(R.layout.fragment_data_tempat_tinggal, container, false);
         pd = new ProgressBar(getContext());
-        lk= nv.findViewById(R.id.lama_kandungan);
-        kk= nv.findViewById(R.id.keadaan_kandungan);
-        kl= nv.findViewById(R.id.keadaan_lahir);
-        pk= nv.findViewById(R.id.proses_kelahiran);
-        pmbntu_klhrn = nv.findViewById(R.id.pembantu_kelahiran);
-        bp= nv.findViewById(R.id.beratpanjang);
-        usiaibu= nv.findViewById(R.id.usia_ibu_melahirkan);
-        gofrag6 = nv.findViewById(R.id.kefrag6);
-        gofrag6.setOnClickListener(new View.OnClickListener() {
+        stt= nv.findViewById(R.id.status_tmpt_tinggal);
+        jr= nv.findViewById(R.id.jarak_rmh);
+        lr= nv.findViewById(R.id.luas_rumah);
+        jk= nv.findViewById(R.id.jumlah_kamar);
+        gofrag8 = nv.findViewById(R.id.kefrag8);
+        gofrag8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clik();
@@ -68,56 +64,35 @@ public class kelahiran extends Fragment {
                 .show();
     }
     public void clik() {
-        String keadaan_kndngan = kk.getText().toString();
-        String lama_kndngan = lk.getText().toString();
-        String keadaan_lhr = kl.getText().toString();
-        String proses_klhrn = pk.getText().toString();
-        String pembantu_klhrn = pmbntu_klhrn.getText().toString();
-        String brt_pnjng = bp.getText().toString();
-        String usia_ibu_mlhrkn = usiaibu.getText().toString();
+        String jarak_rumah = jr.getText().toString();
+        String stts_tmpt_tinggal = stt.getText().toString();
+        String luas_rmh = lr.getText().toString();
+        String jmlh_kmr = jk.getText().toString();
         View focusView = null;
         boolean cancel = false;
-        if (TextUtils.isEmpty(keadaan_kndngan)) {
+        if (TextUtils.isEmpty(jarak_rumah)) {
             showSnackbar("harap di isi");
-            kk.setError(getString(R.string.error_field_required));
-            focusView = kk;
-            kk.requestFocus();
+            jr.setError(getString(R.string.error_field_required));
+            focusView = jr;
+            jr.requestFocus();
             cancel = true;
-        } else if (TextUtils.isEmpty(lama_kndngan)) {
+        } else if (TextUtils.isEmpty(stts_tmpt_tinggal)) {
             showSnackbar("harap di isi");
-            lk.setError(getString(R.string.error_field_required));
-            focusView = lk;
-            lk.requestFocus();
+            stt.setError(getString(R.string.error_field_required));
+            focusView = stt;
+            stt.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(keadaan_lhr)) {
+        }else if (TextUtils.isEmpty(luas_rmh)) {
             showSnackbar("harap di isi");
-            kl.setError(getString(R.string.error_field_required));
-            focusView = kl;
-            kl.requestFocus();
+            lr.setError(getString(R.string.error_field_required));
+            focusView = lr;
+            lr.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(proses_klhrn)) {
+        }else if (TextUtils.isEmpty(jmlh_kmr)) {
             showSnackbar("harap di isi");
-            pk.setError(getString(R.string.error_field_required));
-            focusView = pk;
-            pk.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(pembantu_klhrn)) {
-            showSnackbar("harap di isi");
-            pmbntu_klhrn.setError(getString(R.string.error_field_required));
-            focusView = pmbntu_klhrn;
-            pmbntu_klhrn.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(brt_pnjng)) {
-            showSnackbar("harap di isi");
-            bp.setError(getString(R.string.error_field_required));
-            focusView = bp;
-            bp.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(usia_ibu_mlhrkn)) {
-            showSnackbar("harap di isi");
-            usiaibu.setError(getString(R.string.error_field_required));
-            focusView = usiaibu;
-            usiaibu.requestFocus();
+            jk.setError(getString(R.string.error_field_required));
+            focusView = jk;
+            jk.requestFocus();
             cancel = true;
         }else{
             signupRequest();
@@ -126,15 +101,12 @@ public class kelahiran extends Fragment {
     }
     private void signupRequest() {
         pd.setVisibility(View.VISIBLE);
-        gofrag6.setVisibility(View.GONE);
+        gofrag8.setVisibility(View.GONE);
 
-        final String keadaan_kndngan = kk.getText().toString().trim();
-        final String lama_kndngan = lk.getText().toString().trim();
-        final String keadaan_lhr = kl.getText().toString().trim();
-        final String proses_klhrn = pk.getText().toString().trim();
-        final String pembantu_klhrn = pmbntu_klhrn.getText().toString().trim();
-        final String brt_pnjng = bp.getText().toString().trim();
-        final String usia_ibu_mlhrkn = usiaibu.getText().toString().trim();
+        final String jarak_rumah = jr.getText().toString().trim();
+        final String stts_tmpt_tinggal = stt.getText().toString().trim();
+        final String luas_rmh = lr.getText().toString().trim();
+        final String jmlh_kmr = jk.getText().toString().trim();
 
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
@@ -157,13 +129,13 @@ public class kelahiran extends Fragment {
                             }else {
                                 showSnackbar("Data Gagal input");
                                 pd.setVisibility(View.GONE);
-                                gofrag6.setVisibility(View.VISIBLE);
+                                gofrag8.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             showSnackbar("Data gagal di input");
                             pd.setVisibility(View.GONE);
-                            gofrag6.setVisibility(View.VISIBLE);
+                            gofrag8.setVisibility(View.VISIBLE);
                         }
                     }
                 },
@@ -172,7 +144,7 @@ public class kelahiran extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         showSnackbar("Data gagal di input, cek koneksimu" + error.toString());
                         pd.setVisibility(View.GONE);
-                        gofrag6.setVisibility(View.VISIBLE);
+                        gofrag8.setVisibility(View.VISIBLE);
                     }
                 })
         {
@@ -180,14 +152,11 @@ public class kelahiran extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("kk", keadaan_kndngan);
-                params.put("lk", lama_kndngan);
-                params.put("kl", keadaan_lhr);
-                params.put("pk", proses_klhrn);
-                params.put("pmbntu_klhrn", pembantu_klhrn);
-                params.put("bp", brt_pnjng);
-                params.put("usiaibu", usia_ibu_mlhrkn);
-                params.put("api", "kelahiran");
+                params.put("jr", jarak_rumah);
+                params.put("stt", stts_tmpt_tinggal);
+                params.put("lr", luas_rmh);
+                params.put("jk", jmlh_kmr);
+                params.put("api", "data_tempat_tinggal");
                 params.put("id_user", mIduser);
                 return params;
             }

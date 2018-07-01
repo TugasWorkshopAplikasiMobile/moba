@@ -47,6 +47,7 @@ public class cirikhas_frag extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_cirikhas_frag, container, false);
         fisik_nonjol = view.findViewById(R.id.fisik_nonjol);
+        pd = new ProgressBar(getContext());
         pribadi_nonjol = view.findViewById(R.id.pribadi_nonjol);
         bakat_nonjol = view.findViewById(R.id.bakat_nonjol);
         lk = view.findViewById(R.id.laki);
@@ -55,6 +56,12 @@ public class cirikhas_frag extends Fragment {
         nama_saudara = view.findViewById(R.id.nama_saudara);
         pendidikan_saudara = view.findViewById(R.id.pendidikan_saudara);
         gofrag7 = view.findViewById(R.id.kefrag7);
+        gofrag7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clik();
+            }
+        });
         return view;
     }
     public void showSnackbar(String stringSnackbar){
