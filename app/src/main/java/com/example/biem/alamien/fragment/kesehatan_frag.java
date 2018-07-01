@@ -178,7 +178,6 @@ public class kesehatan_frag extends Fragment {
         final String penngran= pendengaran.getText().toString().trim();
         final String pnmpilan= penampilan.getText().toString().trim();
 
-
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
         final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
@@ -219,17 +218,7 @@ public class kesehatan_frag extends Fragment {
                     }
                 })
         {
-            final String t_badan = tb.getText().toString().trim();
-            final String b_badan = bb.getText().toString().trim();
-            final String m_asi = minum_asi.getText().toString().trim();
-            final String p_2 = perkem_2_bulan.getText().toString().trim();
-            final String klainan = kelainan.getText().toString().trim();
-            final String m_tambahan = makan_tambahan.getText().toString().trim();
-            final String imun = imunisasi.getText().toString().trim();
-            final String alerg = alergi.getText().toString().trim();
-            final String penglihat= penglihatan.getText().toString().trim();
-            final String penngran= pendengaran.getText().toString().trim();
-            final String pnmpilan= penampilan.getText().toString().trim();
+
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();

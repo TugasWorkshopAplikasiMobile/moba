@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class cirikhas_frag extends Fragment {
     private Snackbar snackbar;
-    private Button gofrag5;
+    private Button gofrag7;
     private ProgressBar pd;
     private TextView fisik_nonjol,pribadi_nonjol,bakat_nonjol,prestasi,nama_saudara,jk_saudara,pendidikan_saudara;
     private String Urlinsert = "api/isidata";
@@ -54,6 +54,7 @@ public class cirikhas_frag extends Fragment {
         prestasi = view.findViewById(R.id.prestasi);
         nama_saudara = view.findViewById(R.id.nama_saudara);
         pendidikan_saudara = view.findViewById(R.id.pendidikan_saudara);
+        gofrag7 = view.findViewById(R.id.kefrag7);
         return view;
     }
     public void showSnackbar(String stringSnackbar){
@@ -66,14 +67,9 @@ public class cirikhas_frag extends Fragment {
         String p_nonjol = pribadi_nonjol.getText().toString();
         String b_nonjol = bakat_nonjol.getText().toString();
         String pres= prestasi.getText().toString();
-        String n_saudara = nama_saudara.getText().toString();
-        String p_saudara = pendidikan_saudara.getText().toString();
 
         View focusView = null;
         boolean cancel = false;
-        if (!lk.isChecked() && !pr.isChecked()){
-            showSnackbar("harap pilih jenis kelamin");
-        }
         if (TextUtils.isEmpty(f_nonjol)) {
             showSnackbar("harap di isi");
             fisik_nonjol.setError(getString(R.string.error_field_required));
@@ -98,18 +94,6 @@ public class cirikhas_frag extends Fragment {
             focusView = prestasi;
             prestasi.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(n_saudara)) {
-            showSnackbar("harap di isi");
-            nama_saudara.setError(getString(R.string.error_field_required));
-            focusView = nama_saudara;
-            nama_saudara.requestFocus();
-            cancel = true;
-        }else if (TextUtils.isEmpty(p_saudara)) {
-            showSnackbar("harap di isi");
-            pendidikan_saudara.setError(getString(R.string.error_field_required));
-            focusView = pendidikan_saudara;
-            pendidikan_saudara.requestFocus();
-            cancel = true;
         }else{
             signupRequest();
         }
@@ -117,7 +101,7 @@ public class cirikhas_frag extends Fragment {
     }
     private void signupRequest() {
         pd.setVisibility(View.VISIBLE);
-        gofrag5.setVisibility(View.GONE);
+        gofrag7.setVisibility(View.GONE);
 
         final String f_nonjol = fisik_nonjol.getText().toString().trim();
         final String p_nonjol = pribadi_nonjol.getText().toString().trim();
@@ -147,13 +131,13 @@ public class cirikhas_frag extends Fragment {
                             }else {
                                 showSnackbar("Data Gagal input");
                                 pd.setVisibility(View.GONE);
-                                gofrag5.setVisibility(View.VISIBLE);
+                                gofrag7.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             showSnackbar("Data gagal di input");
                             pd.setVisibility(View.GONE);
-                            gofrag5.setVisibility(View.VISIBLE);
+                            gofrag7.setVisibility(View.VISIBLE);
                         }
                     }
                 },
@@ -162,16 +146,10 @@ public class cirikhas_frag extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         showSnackbar("Data gagal di input, cek koneksimu" + error.toString());
                         pd.setVisibility(View.GONE);
-                        gofrag5.setVisibility(View.VISIBLE);
+                        gofrag7.setVisibility(View.VISIBLE);
                     }
                 })
         {
-            final String f_nonjol = fisik_nonjol.getText().toString().trim();
-            final String p_nonjol = pribadi_nonjol.getText().toString().trim();
-            final String b_nonjol = bakat_nonjol.getText().toString().trim();
-            final String pres= prestasi.getText().toString().trim();
-            final String n_saudara = nama_saudara.getText().toString().trim();
-            final String p_saudara = pendidikan_saudara.getText().toString().trim();
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
