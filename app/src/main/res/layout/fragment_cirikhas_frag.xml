@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:text="E. Ciri khas Anak"/>
+        android:text="F. Ciri khas Anak"/>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:text="F. Saudara kandung"/>
+            android:text="G. Saudara kandung"/>
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_marginTop="15dp"
@@ -87,18 +87,6 @@
                 android:maxLines="1"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
-        <!--<android.support.design.widget.TextInputLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--<AutoCompleteTextView-->
-                <!--android:id="@+id/jk_saudara"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Jenis Kelamin"-->
-                <!--android:maxLines="1"-->
-                <!--android:singleLine="true" />-->
-        <!--</android.support.design.widget.TextInputLayout>-->
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -129,7 +117,7 @@
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
         <Button
-            android:id="@+id/end"
+            android:id="@+id/kefrag7"
             android:layout_marginTop="14dp"
             android:layout_width="match_parent"
             android:text="@string/selanjutnya"
@@ -141,7 +129,7 @@
             android:layout_width="match_parent"
             android:gravity="center_horizontal"
             android:layout_height="wrap_content"
-            android:text="5/8"/>
+            android:text="6/8"/>
     </LinearLayout>
     </ScrollView>
 

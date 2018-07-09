@@ -379,7 +379,7 @@ public class keluarga_fragment extends Fragment {
                     params.put("agamaI", "5");
                 }
                 params.put("id_user", mIduser);
-                params.put("api", "datasiswa");
+                params.put("api", "keluarga");
                 return params;
             }
         };

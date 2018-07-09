@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -31,38 +30,33 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class cirikhas_frag extends Fragment {
+public class data_tempat_tinggal extends Fragment {
     private Snackbar snackbar;
-    private Button gofrag7;
+    private Button gofrag8;
     private ProgressBar pd;
-    private TextView fisik_nonjol,pribadi_nonjol,bakat_nonjol,prestasi,nama_saudara,jk_saudara,pendidikan_saudara;
+    private TextView stt,jr,lr,jk;
     private String Urlinsert = "api/isidata";
     com.example.biem.alamien.model.baseUrlApi baseUrlApi = new baseUrlApi();
     private String URL = baseUrlApi.getBaseUrl();
-    RadioButton lk,pr;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_cirikhas_frag, container, false);
-        fisik_nonjol = view.findViewById(R.id.fisik_nonjol);
+        View nv = inflater.inflate(R.layout.fragment_data_tempat_tinggal, container, false);
         pd = new ProgressBar(getContext());
-        pribadi_nonjol = view.findViewById(R.id.pribadi_nonjol);
-        bakat_nonjol = view.findViewById(R.id.bakat_nonjol);
-        lk = view.findViewById(R.id.laki);
-        pr = view.findViewById(R.id.perempuan);
-        prestasi = view.findViewById(R.id.prestasi);
-        nama_saudara = view.findViewById(R.id.nama_saudara);
-        pendidikan_saudara = view.findViewById(R.id.pendidikan_saudara);
-        gofrag7 = view.findViewById(R.id.kefrag7);
-        gofrag7.setOnClickListener(new View.OnClickListener() {
+        stt= nv.findViewById(R.id.status_tmpt_tinggal);
+        jr= nv.findViewById(R.id.jarak_rmh);
+        lr= nv.findViewById(R.id.luas_rumah);
+        jk= nv.findViewById(R.id.jumlah_kamar);
+        gofrag8 = nv.findViewById(R.id.kefrag8);
+        gofrag8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clik();
             }
         });
-        return view;
+        return nv;
     }
     public void showSnackbar(String stringSnackbar){
         snackbar.make(getActivity().findViewById(android.R.id.content), stringSnackbar.toString(), Snackbar.LENGTH_SHORT)
@@ -70,36 +64,35 @@ public class cirikhas_frag extends Fragment {
                 .show();
     }
     public void clik() {
-        String f_nonjol = fisik_nonjol.getText().toString();
-        String p_nonjol = pribadi_nonjol.getText().toString();
-        String b_nonjol = bakat_nonjol.getText().toString();
-        String pres= prestasi.getText().toString();
-
+        String jarak_rumah = jr.getText().toString();
+        String stts_tmpt_tinggal = stt.getText().toString();
+        String luas_rmh = lr.getText().toString();
+        String jmlh_kmr = jk.getText().toString();
         View focusView = null;
         boolean cancel = false;
-        if (TextUtils.isEmpty(f_nonjol)) {
+        if (TextUtils.isEmpty(jarak_rumah)) {
             showSnackbar("harap di isi");
-            fisik_nonjol.setError(getString(R.string.error_field_required));
-            focusView = fisik_nonjol;
-            fisik_nonjol.requestFocus();
+            jr.setError(getString(R.string.error_field_required));
+            focusView = jr;
+            jr.requestFocus();
             cancel = true;
-        } else if (TextUtils.isEmpty(p_nonjol)) {
+        } else if (TextUtils.isEmpty(stts_tmpt_tinggal)) {
             showSnackbar("harap di isi");
-            prestasi.setError(getString(R.string.error_field_required));
-            focusView =pribadi_nonjol;
-            pribadi_nonjol.requestFocus();
+            stt.setError(getString(R.string.error_field_required));
+            focusView = stt;
+            stt.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(b_nonjol)) {
+        }else if (TextUtils.isEmpty(luas_rmh)) {
             showSnackbar("harap di isi");
-            bakat_nonjol.setError(getString(R.string.error_field_required));
-            focusView = bakat_nonjol;
-            bakat_nonjol.requestFocus();
+            lr.setError(getString(R.string.error_field_required));
+            focusView = lr;
+            lr.requestFocus();
             cancel = true;
-        }else if (TextUtils.isEmpty(pres)) {
+        }else if (TextUtils.isEmpty(jmlh_kmr)) {
             showSnackbar("harap di isi");
-            prestasi.setError(getString(R.string.error_field_required));
-            focusView = prestasi;
-            prestasi.requestFocus();
+            jk.setError(getString(R.string.error_field_required));
+            focusView = jk;
+            jk.requestFocus();
             cancel = true;
         }else{
             signupRequest();
@@ -108,14 +101,12 @@ public class cirikhas_frag extends Fragment {
     }
     private void signupRequest() {
         pd.setVisibility(View.VISIBLE);
-        gofrag7.setVisibility(View.GONE);
+        gofrag8.setVisibility(View.GONE);
 
-        final String f_nonjol = fisik_nonjol.getText().toString().trim();
-        final String p_nonjol = pribadi_nonjol.getText().toString().trim();
-        final String b_nonjol = bakat_nonjol.getText().toString().trim();
-        final String pres= prestasi.getText().toString().trim();
-        final String n_saudara = nama_saudara.getText().toString().trim();
-        final String p_saudara = pendidikan_saudara.getText().toString().trim();
+        final String jarak_rumah = jr.getText().toString().trim();
+        final String stts_tmpt_tinggal = stt.getText().toString().trim();
+        final String luas_rmh = lr.getText().toString().trim();
+        final String jmlh_kmr = jk.getText().toString().trim();
 
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
@@ -130,21 +121,21 @@ public class cirikhas_frag extends Fragment {
                             if (succes.equals("1")) {
 //                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
-//                                android.support.v4.app.Fragment fragment = new cirikhas_frag();
-//                                android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
-//                                ft.replace(R.id.screen_area,fragment);
-//                                ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
-//                                ft.commit();
+                                android.support.v4.app.Fragment fragment = new cirikhas_frag();
+                                android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+                                ft.replace(R.id.screen_area,fragment);
+                                ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
+                                ft.commit();
                             }else {
                                 showSnackbar("Data Gagal input");
                                 pd.setVisibility(View.GONE);
-                                gofrag7.setVisibility(View.VISIBLE);
+                                gofrag8.setVisibility(View.VISIBLE);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                             showSnackbar("Data gagal di input");
                             pd.setVisibility(View.GONE);
-                            gofrag7.setVisibility(View.VISIBLE);
+                            gofrag8.setVisibility(View.VISIBLE);
                         }
                     }
                 },
@@ -153,7 +144,7 @@ public class cirikhas_frag extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         showSnackbar("Data gagal di input, cek koneksimu" + error.toString());
                         pd.setVisibility(View.GONE);
-                        gofrag7.setVisibility(View.VISIBLE);
+                        gofrag8.setVisibility(View.VISIBLE);
                     }
                 })
         {
@@ -161,18 +152,12 @@ public class cirikhas_frag extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("f_nonjol", f_nonjol);
-                params.put("p_nonjol", p_nonjol);
-                params.put("b_nonjol", b_nonjol);
-                params.put("pres", pres);
-                params.put("n_saudara", n_saudara);
-                params.put("p_saudara", p_saudara);
-                if (lk.isChecked()){
-                    params.put("jk", "1");
-                }else {
-                    params.put("jk", "2");
-                }
-                params.put("api", "cirikhas");
+                params.put("jr", jarak_rumah);
+                params.put("stt", stts_tmpt_tinggal);
+                params.put("lr", luas_rmh);
+                params.put("jk", jmlh_kmr);
+                params.put("api", "data_tempat_tinggal");
+                params.put("id_user", mIduser);
                 return params;
             }
         };
@@ -180,4 +165,3 @@ public class cirikhas_frag extends Fragment {
         requestQueue.add(stringRequest);
     }
 }
-

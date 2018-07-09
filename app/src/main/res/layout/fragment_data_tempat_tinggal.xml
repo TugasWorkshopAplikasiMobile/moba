@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.data_tempat_tinggal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="H. Data Tempat Tinggal"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/status_tmpt_tinggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Status Tempat Tinggal"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/jarak_rmh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jarak Rumah ke Sekolah (Km)"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/luas_rumah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Luas Rumah"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="number"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/jumlah_kamar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jumlah Kamar"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:inputType="number"/>
+    </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/kefrag8"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:text="@string/selanjutnya"
+            android:textColor="@color/putih"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="7/8"/>
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+</FrameLayout>
