@@ -72,4 +72,12 @@
     <string name="slide_4_title">GUIDE</string>
     <string name="slide_4_desc">Cari Guide Untuk Menemani Perjalananmu Agar  semakin asyik </string>
     <string name="selanjutnya">Selanjutnya</string>
+
+    <!--Kuisioner-->
+    <string name="kuis1">1. Darimana pertama kali Anda mengetahui, mengenal Al-Baitul Amien ?</string>
+    <string name="kuis2">2. Apa alasan Anda memilih Sekolah Al-Baitul Amien sebagai tempat studi/belajar ?</string>
+    <string name="kuis3">3. Menurut Anda, hal apa yang paling utama dalam memilih sekolah ?</string>
+    <string name="kuis4">4. Bagaimana pendapat Anda mengenai mutu Sekolah Al-Baitul Amien ?</string>
+    <string name="kuis5">5. Bagaimana proses Pendaftaran Siswa Baru (sejauh yang anda ketahui) di Sekolah Al-Baitul Amien ?</string>
+    <string name="kirim">Kirim</string>
 </resources>

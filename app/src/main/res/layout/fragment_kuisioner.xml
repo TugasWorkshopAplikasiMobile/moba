@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragment.kuisioner">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="Kuisioner"/>
+        <TextView
+            android:text="Mohon luangkan waktu untuk mengisi Kuisioner berikut."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/kuis1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:text="Saudara / Teman / Orang Tua"
+                android:id="@+id/a1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Website dan Sosial Media"
+                android:id="@+id/b1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Media (Surat kabar, Majalah, Radio, TV)"
+                android:id="@+id/c1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Brosur"
+                android:id="@+id/d1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Pameran, Open House, Expo"
+                android:id="@+id/e1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Lain - lain"
+                android:id="@+id/f1"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <TextView
+        android:text="@string/kuis2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:text="Mutu Sekolah"
+                android:id="@+id/a2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Kemauan diri sendiri"
+                android:id="@+id/b2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Anjuran Orang Tua"
+                android:id="@+id/c2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Ikut teman"
+                android:id="@+id/d2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Hanya coba - coba"
+                android:id="@+id/e2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Lain - lain"
+                android:id="@+id/f2"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <TextView
+            android:text="@string/kuis3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:text="Fasilitas"
+                android:id="@+id/a3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Biaya Sekolah"
+                android:id="@+id/b3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Kemudahan / akses ke sekolah"
+                android:id="@+id/c3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Mutu"
+                android:id="@+id/d3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Kerohanian"
+                android:id="@+id/e3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Lain - lain"
+                android:id="@+id/f3"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+        <TextView
+            android:text="@string/kuis4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:text="Sangat Bagus"
+                android:id="@+id/a4"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Bagus"
+                android:id="@+id/b4"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Biasa saja"
+                android:id="@+id/c4"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Kurang bagus"
+                android:id="@+id/d4"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <AutoCompleteTextView
+                    android:id="@+id/alasan4d"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Berikan Alasan"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+            <RadioButton
+                android:text="Sangat kurang bagus"
+                android:id="@+id/e4"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <AutoCompleteTextView
+                    android:id="@+id/alasan4e"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Berikan Alasan"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+        </RadioGroup>
+        <TextView
+            android:text="@string/kuis5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:text="Sangat memuaskan"
+                android:id="@+id/a5"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Memuaskan"
+                android:id="@+id/b5"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Cukup"
+                android:id="@+id/c5"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:text="Kurang memuaskan"
+                android:id="@+id/d5"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <AutoCompleteTextView
+                    android:id="@+id/alasan5d"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Berikan Alasan"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+            <RadioButton
+                android:text="Sangat kurang memuaskan"
+                android:id="@+id/e5"
+                android:layout_width="wrap_content"
+                android:layout_weight="3"
+                android:layout_height="wrap_content" />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible">
+                <AutoCompleteTextView
+                    android:id="@+id/alasan5e"
+                    android:textSize="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Berikan Alasan"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+        </RadioGroup>
+        <Button
+            android:id="@+id/kirim"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:text="@string/kirim"
+            android:textColor="@color/putih"
+            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="8/8"/>
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>
