@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -35,8 +37,9 @@ import java.util.Map;
 public class nilai_fragment extends Fragment {
     private Snackbar snackbar;
     private ProgressBar pd;
-    private TextView bin,bing,mtk,ipa,tpa;
-    private String Urlinsert = "api/isidata";
+    private TextView bin,bing,mtk,ipa,tpa,keterangan,nyataan;
+    private TableLayout tableLayout;
+    private String Urlinsert = "api/out?api=nilai&id=";
     RequestQueue rq;
     com.example.biem.alamien.model.baseUrlApi baseUrlApi = new baseUrlApi();
     private String URL = baseUrlApi.getBaseUrl();
@@ -51,43 +54,54 @@ public class nilai_fragment extends Fragment {
         mtk = nv.findViewById(R.id.mtk);
         ipa = nv.findViewById(R.id.ipa);
         tpa= nv.findViewById(R.id.psikologi);
+        keterangan=nv.findViewById(R.id.belum_input);
+        nyataan = nv.findViewById(R.id.belum_isi);
+        tableLayout = nv.findViewById(R.id.nilai);
+         signupRequest();
         return nv;
+
+    }
+    public void showSnackbar(String stringSnackbar){
+        snackbar.make(getActivity().findViewById(android.R.id.content), stringSnackbar.toString(), Snackbar.LENGTH_SHORT)
+                .setActionTextColor(getResources().getColor(R.color.colorPrimary))
+                .show();
+
     }
     private void signupRequest() {
-        pd.setVisibility(View.VISIBLE);
+//        pd.setVisibility(View.VISIBLE);
 
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
         final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL + Urlinsert,
+        Log.d("TAG", "signupRequest: "+mIduser);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL + Urlinsert+mIduser,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String succes = jsonObject.getString("succes");
+                            JSONObject nilai = new JSONObject(response);
+                            bin.setText(nilai.getString("bahasa_indonesia"));
+                            bing.setText(nilai.getString("bahasa_inggris"));
+                            mtk.setText(nilai.getString("matematika"));
+                            ipa.setText(nilai.getString("ipa"));
+                            tpa.setText(nilai.getString("psikologi"));
+                            tableLayout.setVisibility(View.VISIBLE);
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            pd.setVisibility(View.GONE);
+                            keterangan.setVisibility(View.VISIBLE);
+                            showSnackbar("Data Belum di Inputkan");
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        pd.setVisibility(View.GONE);
-
+//                        pd.setVisibility(View.GONE);
+                        showSnackbar("Periksa koneksi & coba lagi ya");
                     }
-                })
-        {
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-
-                return params;
-            }
-        };
+                }
+                );
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         requestQueue.add(stringRequest);
     }

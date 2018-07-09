@@ -44,9 +44,9 @@ public class SessionManager {
 
         editor.apply();
     }
-    public void createSessiondata(String id_user){
+    public void createSessiondata(String id_siswa){
         editor.putBoolean(ISI_DATA, true);
-        editor.putString( "ID_SISWA", id_user );
+        editor.putString( "ID_SISWA", id_siswa );
         editor.apply();
     }
 

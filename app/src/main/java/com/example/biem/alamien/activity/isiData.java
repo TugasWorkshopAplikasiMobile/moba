@@ -16,6 +16,7 @@ private EditText siswa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("FORM DATA SISWA");
         setContentView(R.layout.activity_isi_data);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

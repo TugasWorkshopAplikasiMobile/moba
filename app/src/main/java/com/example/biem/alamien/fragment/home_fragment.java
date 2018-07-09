@@ -135,4 +135,5 @@ public class home_fragment extends android.support.v4.app.Fragment {
         mIndicator.setPageCount(fragments.size());
         mIndicator.show();
     }
+
 }

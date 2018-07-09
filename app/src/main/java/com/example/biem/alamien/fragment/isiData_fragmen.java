@@ -147,6 +147,7 @@ public class isiData_fragmen extends Fragment {
         final SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
         final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + Urlinsert,
                 new Response.Listener<String>() {
                     @Override
@@ -157,8 +158,8 @@ public class isiData_fragmen extends Fragment {
                             if (succes.equals("1")) {
                                 JSONObject data_user=jsonObject.getJSONObject("data_siswa");
                                 String id_siswa = data_user.getString("id_siswa");
+
                                 sessionManager.createSessiondata(id_siswa);
-//                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
                                 android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();
                                 android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
