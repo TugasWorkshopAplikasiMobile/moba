@@ -34,7 +34,7 @@ public class isiData_fragmen extends Fragment {
     private Snackbar snackbar;
     private Button gofrag2;
     private ProgressBar pd;
-    TextView nl,np,tl,up,agm,kwn,tglbr,ak;
+    TextView nl,np,tl,up,tglbr,ak;
     private String Urlinsert = "api/insert";
     baseUrlApi baseUrlApi = new baseUrlApi();
     private String URL = baseUrlApi.getBaseUrl();
@@ -144,9 +144,11 @@ public class isiData_fragmen extends Fragment {
         final String ting = tglbr.getText().toString().trim();
         final String ake = ak.getText().toString().trim();
 
+        //gausah
         final SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
         final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + Urlinsert,
                 new Response.Listener<String>() {
                     @Override
@@ -157,10 +159,10 @@ public class isiData_fragmen extends Fragment {
                             if (succes.equals("1")) {
                                 JSONObject data_user=jsonObject.getJSONObject("data_siswa");
                                 String id_siswa = data_user.getString("id_siswa");
+
                                 sessionManager.createSessiondata(id_siswa);
-//                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
-                                android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();
+                                android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();//ke page selanjutnya
                                 android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
                                 ft.replace(R.id.screen_area,fragment);
                                 ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
@@ -193,6 +195,7 @@ public class isiData_fragmen extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                //
                 params.put("nl", nama_l);
                 params.put("np", nama_p);
                 if (wni.isChecked()){
@@ -223,6 +226,7 @@ public class isiData_fragmen extends Fragment {
                 params.put("ake", ake);
                 params.put("id_user", mIduser);
                 params.put("api", "datasiswa");
+                //
                 return params;
             }
         };

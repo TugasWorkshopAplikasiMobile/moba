@@ -19,6 +19,7 @@ public class splash extends Activity {
             @Override
             public void run() {
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
             }
         },2000);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);

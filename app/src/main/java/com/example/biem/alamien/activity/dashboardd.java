@@ -1,5 +1,6 @@
 package com.example.biem.alamien.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -57,8 +59,18 @@ public class dashboardd extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
         } else {
             super.onBackPressed();
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle("Keluar Aplikasi").setMessage("Anda yakin ingin keluar Aplikasi ini ?").setPositiveButton("ya", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    finish();
+//                }
+//            }).setNegativeButton("tidak",null);
+//            AlertDialog alertDialog = builder.create();
+//            alertDialog.show();
         }
     }
 
