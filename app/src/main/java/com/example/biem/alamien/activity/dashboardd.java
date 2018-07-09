@@ -21,6 +21,7 @@ import com.example.biem.alamien.fragment.About_fragment;
 import com.example.biem.alamien.fragment.daftarulang_fragment;
 import com.example.biem.alamien.fragment.home_fragment;
 import com.example.biem.alamien.fragment.jadwal_fragment;
+import com.example.biem.alamien.fragment.nilai_fragment;
 import com.example.biem.alamien.fragment.pengumuman_fragment;
 import com.example.biem.alamien.fragment.profile_fragmen;
 import com.example.biem.alamien.serivices.SessionManager;
@@ -108,7 +109,7 @@ public class dashboardd extends AppCompatActivity
                 fragment = new jadwal_fragment();
                 break;
             case R.id.nav_nilai:
-                fragment = new jadwal_fragment();
+                fragment = new nilai_fragment();
                 break;
             case R.id.nav_pengumuman:
                 fragment = new pengumuman_fragment();
