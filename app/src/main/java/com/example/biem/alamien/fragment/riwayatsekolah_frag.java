@@ -144,7 +144,7 @@ public class riwayatsekolah_frag extends Fragment {
                             if (succes.equals("1")) {
 //                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
-                                android.support.v4.app.Fragment fragment = new riwayatsekolah_frag();
+                                android.support.v4.app.Fragment fragment = new keluarga_fragment();
                                 android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
                                 ft.replace(R.id.screen_area,fragment);
                                 ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya

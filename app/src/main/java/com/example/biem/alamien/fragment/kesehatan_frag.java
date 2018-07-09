@@ -191,7 +191,7 @@ public class kesehatan_frag extends Fragment {
                             if (succes.equals("1")) {
 //                                startActivity(new Intent(getApplicationContext(),bukti_bayar.class));
                                 showSnackbar("Data berhasil di input");
-                                android.support.v4.app.Fragment fragment = new cirikhas_frag();
+                                android.support.v4.app.Fragment fragment = new kelahiran();
                                 android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
                                 ft.replace(R.id.screen_area,fragment);
                                 ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
