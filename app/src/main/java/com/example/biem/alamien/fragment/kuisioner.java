@@ -97,6 +97,11 @@ public class kuisioner extends Fragment {
         String jawab3 = jwbn3.getText().toString();
         String jawab4 = jwbn4.getText().toString();
         String jawab5 = jwbn5.getText().toString();
+        String alasan_4d = alasand4.getText().toString();
+        String alasan_4e = alasane4.getText().toString();
+        String alasan_5d = alasand5.getText().toString();
+        String alasan_5e = alasane5.getText().toString();
+
         View focusView = null;
         boolean cancel = false;
         if (!A1.isChecked() && !B1.isChecked() && !C1.isChecked() && !D1.isChecked() && !E1.isChecked() && !F1.isChecked()) {
@@ -148,6 +153,30 @@ public class kuisioner extends Fragment {
             jwbn5.setError(getString(R.string.error_field_required));
             focusView = jwbn5;
             jwbn5.requestFocus();
+            cancel = true;
+        }else if (TextUtils.isEmpty(alasan_4d)) {
+            showSnackbar("Tidak Boleh Kosong !");
+            alasand4.setError(getString(R.string.error_field_required));
+            focusView = alasand4;
+            alasand4.requestFocus();
+            cancel = true;
+        }else if (TextUtils.isEmpty(alasan_4e)) {
+            showSnackbar("Tidak Boleh Kosong !");
+            alasane4.setError(getString(R.string.error_field_required));
+            focusView = alasane4;
+            alasane4.requestFocus();
+            cancel = true;
+        }else if (TextUtils.isEmpty(alasan_5d)) {
+            showSnackbar("Tidak Boleh Kosong !");
+            alasand5.setError(getString(R.string.error_field_required));
+            focusView = alasand5;
+            alasand5.requestFocus();
+            cancel = true;
+        }else if (TextUtils.isEmpty(alasan_5e)) {
+            showSnackbar("Tidak Boleh Kosong !");
+            alasane5.setError(getString(R.string.error_field_required));
+            focusView = alasane5;
+            alasane5.requestFocus();
             cancel = true;
         }
     }
