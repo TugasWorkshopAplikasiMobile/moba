@@ -119,7 +119,7 @@ public class cirikhas_frag extends Fragment {
 
         SessionManager sessionManager = new SessionManager(getContext());
         HashMap<String, String> user = sessionManager.getUserDetail();
-        final String mIduser = String.valueOf(user.get(sessionManager.ID_USER));
+        final String mIduser = String.valueOf(user.get(sessionManager.ID_SISWA));
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL + Urlinsert,
                 new Response.Listener<String>() {
                     @Override

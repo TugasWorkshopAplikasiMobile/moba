@@ -9,7 +9,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import com.example.biem.alamien.R;
+import com.example.biem.alamien.fragment.cirikhas_frag;
+import com.example.biem.alamien.fragment.daftarulang_fragment;
 import com.example.biem.alamien.fragment.isiData_fragmen;
+import com.example.biem.alamien.fragment.riwayatsekolah_frag;
 
 public class isiData extends AppCompatActivity {
 private EditText siswa;

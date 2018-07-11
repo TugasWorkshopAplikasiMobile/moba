@@ -73,9 +73,6 @@ public class kuisioner extends Fragment {
         C5 = nv.findViewById(R.id.c5);
         D5 = nv.findViewById(R.id.d5);
         E5 = nv.findViewById(R.id.e5);
-        alasand4 = nv.findViewById(R.id.alasan4d);
-        alasane4 = nv.findViewById(R.id.alasan4e);
-        alasand5 = nv.findViewById(R.id.alasan5d);
         alasane5 = nv.findViewById(R.id.alasan5e);
         kirim = nv.findViewById(R.id.kirim);
         kirim.setOnClickListener(new View.OnClickListener() {

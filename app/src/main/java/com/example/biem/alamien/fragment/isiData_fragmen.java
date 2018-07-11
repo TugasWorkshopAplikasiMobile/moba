@@ -1,5 +1,6 @@
 package com.example.biem.alamien.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -168,7 +169,7 @@ public class isiData_fragmen extends Fragment {
                                 ft.addToBackStack("detail");//action untuk bisa back ke fragment sebelumnya
                                 ft.commit();
                             }else {
-                                showSnackbar("Data Gagal input");
+                                showSnackbar("Anda Sudah Melakukan Proses Pengisian Sebelumnya");
                                 pd.setVisibility(View.GONE);
                                 gofrag2.setVisibility(View.VISIBLE);
                             }
@@ -186,7 +187,7 @@ public class isiData_fragmen extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        showSnackbar("Data gagal di input, cek koneksimu" + error.toString());
+                        showSnackbar("Data gagal di input, cek koneksi");
                         pd.setVisibility(View.GONE);
                         gofrag2.setVisibility(View.VISIBLE);
                     }

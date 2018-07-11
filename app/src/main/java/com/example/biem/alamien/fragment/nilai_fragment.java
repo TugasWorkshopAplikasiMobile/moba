@@ -87,8 +87,10 @@ public class nilai_fragment extends Fragment {
                             ipa.setText(nilai.getString("ipa"));
                             tpa.setText(nilai.getString("psikologi"));
                             tableLayout.setVisibility(View.VISIBLE);
+                            nyataan.setVisibility(View.GONE);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            nyataan.setVisibility(View.GONE);
                             keterangan.setVisibility(View.VISIBLE);
                             showSnackbar("Data Belum di Inputkan");
                         }
